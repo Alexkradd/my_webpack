@@ -15,9 +15,7 @@ const PATHS = {
 
 module.exports = {
     entry:  {
-        'index': PATHS.source + '/pages/index/index.js',
-        'blog': PATHS.source + '/pages/blog/blog.js'
-    },
+        'index': PATHS.source + '/pages/index/index.js',    },
 
     output: {
         path: PATHS.build,
@@ -36,11 +34,7 @@ module.exports = {
             chunks: ['index', 'common'],
             template: PATHS.source + '/pages/index/index.pug'
         }),
-        new HtmlWebpackPlugin({
-            filename: 'blog.html',
-            chunks: ['blog', 'common'],
-            template: PATHS.source + '/pages/blog/blog.pug'
-        }),
+
         new CleanWebpackPlugin('build'),
         new ExtractTextPlugin('./css/[name].css'),
         new webpack.optimize.CommonsChunkPlugin({
